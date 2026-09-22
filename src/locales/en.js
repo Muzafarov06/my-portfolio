@@ -179,7 +179,7 @@ export default {
     contactKicker: 'Contact',
     contactTitle: 'Get in touch',
     contactText: 'Open to job offers, internships and joint projects. I reply fast.',
-    aboutMeKicker: 'About me',
+    aboutMeKicker: 'Portfolio',
   },
 
   experience: {

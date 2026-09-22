@@ -179,7 +179,7 @@ export default {
     contactKicker: 'Контакты',
     contactTitle: 'Связаться',
     contactText: 'Открыт к предложениям по работе, стажировкам и совместным проектам. Отвечаю быстро.',
-    aboutMeKicker: 'Обо мне',
+    aboutMeKicker: 'Портфолио',
   },
 
   experience: {
