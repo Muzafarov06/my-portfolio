@@ -1,0 +1,100 @@
+/* ============================================================
+   ШРИФТЫ
+   ============================================================ */
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/great-vibes/400.css';
+@import '@fontsource/tangerine/400.css';
+@import '@fontsource/tangerine/700.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+
+/* ============================================================
+   TAILWIND
+   ============================================================ */
+@import "tailwindcss";
+
+/* Тёмная тема через класс на <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   ТЕМА — переменные
+   ============================================================ */
+@theme {
+  /* Шрифты */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-script: "Great Vibes", cursive;
+
+  /* Светлая тема */
+  --color-bg-light: #ffffff;
+  --color-surface-light: #fafafa;
+  --color-text-light: #000000;
+  --color-muted-light: #6b7280;
+
+  /* Тёмная тема */
+  --color-bg-dark: #0a0a0a;
+  --color-surface-dark: #141414;
+  --color-footer-dark: #0a0a0a;
+  --color-text-dark: #f5f5f5;
+  --color-muted-dark: #a3a3a3;
+}
+
+/* ============================================================
+   БАЗА
+   ============================================================ */
+@layer base {
+  html,
+  body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+    margin: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  /* Тёмная тема */
+  .dark,
+  .dark body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+
+  /* Скроллбар в тёмной теме */
+  .dark ::-webkit-scrollbar { width: 10px; }
+  .dark ::-webkit-scrollbar-track { background: #0a0a0a; }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border: 2px solid #0a0a0a;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+  /* Выделение текста */
+  ::selection { background: #000; color: #fff; }
+  .dark ::selection { background: #fff; color: #000; }
+}
+
+/* ============================================================
+   УТИЛИТЫ
+   ============================================================ */
+@layer utilities {
+  /* Скрыть скроллбар (для мобильной карусели) */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
